@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Simplicity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 130vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            /* background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+        .allowed-container, .not-allowed-container {
+            text-align: left;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .allowed-item, .not-allowed-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid #04bbb8;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .not-allowed-item {
+            border-left: 5px solid #ff6b6b;
+        }
+        .allowed-item p, .not-allowed-item p {
+            margin: 0;
+            margin-left: 10px;
+            color: #333333;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            .allowed-item, .not-allowed-item {
+                padding: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .allowed-item p, .not-allowed-item p {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            .allowed-item, .not-allowed-item {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Legal Simplicity</h1>
+        <p>All photos and videos on Naveen Solutions can be downloaded and used for free.</p>
+        <div class="allowed-container">
+            <h2>What is allowed? <span style="font-size: 1em;">👌</span></h2>
+            <div class="allowed-item">
+                <span role="img" aria-label="check">✔️</span>
+                <p>All photos and videos on Naveen Solutions are free to use.</p>
+            </div>
+            <div class="allowed-item">
+                <span role="img" aria-label="check">✔️</span>
+                <p>Attribution is not required. Giving credit to the photographer or Naveen Solutions is not necessary but always appreciated.</p>
+            </div>
+            <div class="allowed-item">
+                <span role="img" aria-label="check">✔️</span>
+                <p>You can modify the photos and videos from Naveen Solutions. Be creative and edit as you like.</p>
+            </div>
+        </div>
+        <div class="not-allowed-container">
+            <h2>What is not allowed? <span style="font-size: 1em;">🚫</span></h2>
+            <div class="not-allowed-item">
+                <span role="img" aria-label="cross">❌</span>
+                <p>Do not sell unaltered copies of a photo or video. This includes selling the photos or videos as digital downloads or prints.</p>
+            </div>
+            <div class="not-allowed-item">
+                <span role="img" aria-label="cross">❌</span>
+                <p>Do not imply endorsement by the photographer or Naveen Solutions. You cannot use the images to promote products or services in a way that suggests endorsement.</p>
+            </div>
+            <div class="not-allowed-item">
+                <span role="img" aria-label="cross">❌</span>
+                <p>Do not redistribute or sell the photos and videos on other stock photo or wallpaper platforms.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

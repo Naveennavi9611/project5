@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        /*background image and arranging it to cover and center*/
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('bg1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        /*glass morphism effect and box for the login page*/
+        .wrapper {
+            position: relative;
+            width: 400px;
+            height: 440px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .5);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: height .2s ease;
+            overflow: hidden;
+        }
+        .wrapper .form-box {
+            width: 100%;
+            padding: 40px;
+        }
+        /*close icon setup on corner of a table*/
+        .wrapper .icon-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45px;
+            height: 45px;
+            background: #12195c;
+            font-size: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom-left-radius: 20px;
+        }
+        /*Login text bring to center and color and font size*/
+        .form-box h2 {
+            font-size: 2em;
+            color: #287878;
+            text-align: center;
+        }
+        /*between input boxes creating a line in the  to remove the box,but still the box will appear*/
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            border-bottom: 2px solid #162938;
+            margin: 30px 0;
+        }
+        /*between input boxes creating a line in the  to remove the box,now no input box will appear*/
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: #162938;
+            font-weight: 600;
+            padding: 0 35px 0 5px;
+        }
+        /*bring email text in the input box to left side of line top*/
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: #162938;
+            font-weight: 500;
+            pointer-events: none;
+            transition: .5s;
+        }
+        /*when we tap on the email text it will move to some height*/
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label {
+            top: -5px;
+        }
+        /*to set email and password icons right side of line top */
+        .input-box .icon {
+            position: absolute;
+            right: 8px;
+            font-size: 1.2em;
+            color: #162938;
+            line-height: 57px;
+        }
+        /*set distances between remember me and forgot password*/
+        .remember-forgot {
+            font-size: .9em;
+            color: #21b5d0;
+            font-weight: 500;
+            margin: -15px 0 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        /*remember me box color and margin*/
+        .remember-forgot label input {
+            accent-color: #162938;
+            margin-right: 3px;
+        }
+        /*color for forgot password text*/
+        .remember-forgot a {
+            color: #21b5d0;
+            text-decoration: none;
+        }
+        /*underline for forgot password*/
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+        /*login button size and background color and radius*/
+        .btn {
+            width: 100%;
+            height: 45px;
+            background: #040617;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            font-size: 1em;
+            color: #FFF;
+            font-weight: 500;
+        }
+        /*Don't have account and register text to the middle*/
+        .login-register {
+            font-size: .9em;
+            color: #03131f;
+            text-align: center;
+            font-weight: 500;
+            margin: 25px 0 10px;
+        }
+        /*color of register text*/
+        .login-register p a {
+            color: #7575bc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .login-register p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="icon-close"><a href="NShome.html"><img src="icons8-close-20.png" alt="Close"></a></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form name="myform" action="NShome.html" onsubmit="return loginValidation(this)">
+                <div class="input-box">
+                    <span class="icon"><img src="icons8-mail-25.png" alt="Email Icon"></span>
+                    <input type="email" class="mail" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><img src="icons8-password-30.png" alt="Password Icon"></span>
+                    <input type="password" class="pass" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="NSregis.html" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function loginValidation(form) {
+            const password = form.querySelector('.pass').value;
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>

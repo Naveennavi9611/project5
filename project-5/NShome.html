@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS project</title>
+    <style>        
+        *{
+            margin:0;
+            padding: 0;    
+            box-sizing: border-box;
+            font-family: "Poppins, sans-serif";
+        }
+        /*background image and arranging it to cover and center*/
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            min-height: 100vh;
+            background: url('bg1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        /* nav bar position in the right side and nav bar color*/
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+        /*change the Logo size and color*/
+        .logo{
+            font-size: 2em;
+            color: rgb(0, 0, 0);
+            user-select: none;
+        }
+        /*changing the nav bar names colors*/
+        .navigation a{
+            position: relative;
+            font-size: 1.1em;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+            text-align: center;  
+        }
+        /*line effect in the nav bar*/
+        .navigation a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 70px;
+            height: 3px;
+            background: #f4f3f3;
+            border-radius: 5px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+        
+        /*hover effect for line from right to left */
+        .navigation a:hover::after {
+            transform: scaleX(1);
+        }
+        /*Login button size and border radius and size*/
+        .navigation .btnLogin-popup {
+            width: 80px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #fff;
+            outline:none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            color: #f8f6f6;
+            margin-left: 40px;
+            font-weight: 500;
+            transition: .5s; 
+        }
+        /*hover effect for login button*/
+        .navigation .btnLogin-popup:hover {
+            background: #fff;
+            color: #1b486b;
+        }
+        .home{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            margin-left: 10px;
+            padding: 50px 8% 0;
+        }
+        .home-content{
+            max-width: 800px;
+            align-content: center;
+            align-items: center;    
+        }
+        .home-content h1 {
+            font-size: 40px;
+            line-height: 1.2;
+        }
+        .home-content p{
+            font-size: 20px;
+            color: rgb(192, 184, 184);           
+        }
+        /*Explore now button,color,border radius and color*/
+        .btn{
+            display: inline-table;
+            padding: 10px 20px;
+            background: #1741e3;
+            border: 2px solid #1741e3;
+            border-radius: 20px;
+            box-shadow: rgb(189, 16, 152);
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+            text-decoration: none;
+
+        }
+        /*hover effect for Explore now button*/
+        .btn:hover {
+            background: #fff;
+            color: rgb(8, 8, 179)
+        }
+
+
+    </style>
+</head>
+<body>
+    <form id="registration" action="NSlogin.html">
+    <header>
+        <h2 class="logo">NS</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="NSAbout.html">About</a>
+            <a href="NSLicence.html">Licence</a>
+            <a href="NScontactus.html">Contact us</a>
+            <button class="btnLogin-popup">Login</button> </a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h1>Experience with Wallpapers and Videos.</h1><br>
+            <p>Elevate your digital space with our vast library of high-quality wallpapers and videos. From breathtaking landscapes to mesmerizing abstract designs, our wallpapers are carefully curated to inspire and delight. Whether you're looking to refresh your desktop, mobile, or tablet, our diverse collection has something for everyone.</p>
+            <br><a href="NSExplore.html" class="btn">Explore now</a>
+        </div>
+    </section>
+    </form>
+</body>
+</html>
+
+
+
+

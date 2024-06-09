@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Categories</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .main{
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .main h1{
+            position: relative;
+            height: auto;
+            width: 550px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 5% 0 2% 0;
+            text-align: center;
+            font-size: 2.8em;
+            font-weight: 650;
+            letter-spacing: 1.5px;
+            color: #017bf5;
+            border-left: 5px solid #017bf5;
+            border-right: 5px solid #017bf5;
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .main ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .main ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .main ul li a {
+            text-decoration: none;
+            color: #017bf5;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .main ul li a:hover {
+            color: #01447e;
+        }
+
+        .main p{
+            position: relative;
+            height: auto;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            color: #777;
+        }
+
+        .main .gallery{
+            position: relative;
+            height: auto;
+            width: 90%;
+            margin: auto;
+            padding: 45px 0;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 2vh;
+            grid-auto-flow: dense;
+        }
+
+        .main .gallery .video {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.9);
+            border-radius: 2px;
+        }
+
+        .main .gallery .video:first-child {
+            grid-column-start: span 2;
+            grid-row-start: span 2;
+        }
+
+        .main .gallery .video:nth-child(2n+3),
+        .main .gallery .video:nth-child(6n+7),
+        .main .gallery .video:nth-child(10n+11) {
+            grid-row-start: span 2;
+        }
+
+        .main .gallery .video:nth-child(4n+5),
+        .main .gallery .video:nth-child(8n+9),
+        .main .gallery .video:nth-child(12n+13) {
+            grid-column-start: span 2;
+            grid-row-start: span 2;
+        }
+
+        .main .gallery .video video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+            transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .main .gallery .video:hover video {
+            filter: brightness(1) grayscale(0);
+            transform: scale(1.05);
+        }
+
+        @media only screen and (max-width: 768px){
+            .main h1{
+                font-size: 1.8em;
+                width: 400px;
+            }
+            .main p{
+                font-size: 1.2em;
+            }
+            .main .gallery{
+                display: grid;
+                grid-template-columns: auto auto auto;
+            }
+        }
+
+        @media only screen and (max-width: 430px){
+            .main h1{
+                font-size: 1.2em;
+                width: 300px;
+            }
+            .main p{
+                font-size: 0.89em;
+            }
+            .main .gallery{
+                display: block;
+            }
+            .main .gallery .video{
+                display: block;
+                width: 100%;
+                height: 100%;
+                margin: 2% 0;
+            }
+            .main .gallery .video video{
+                display: block;
+                filter: brightness(1) grayscale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Video Categories</h1>
+        <ul>
+            <li><a href="">Nature</a></li>
+            <li><a href="">Waterfalls</a></li>
+            <li><a href="">Butterfly</a></li>
+            <li><a href="">Cars</a></li>
+            <li><a href="">Sports</a></li>
+            <li><a href="">Laptop 3D animations</a></li>
+            <li><a href="">Sea</a></li>
+            <li><a href="">Celebrities</a></li>
+            <li><a href="">Joker Videos</a></li>
+            <li><a href="">Travel</a></li>
+            <li><a href="">Snowfall</a></li>
+        </ul>
+        <div class="gallery">
+            <div class="video">
+                <video controls>
+                    <source src="butterfly.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="v1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="sea1.mp4" type="video/mp4">
+                </video>
+            </div>
+			<div class="video">
+                <video controls>
+                    <source src="v2.mp4" type="video/mp4">
+                </video>
+            </div>
+			<div class="video">
+                <video controls>
+                    <source src="sea.mp4" type="video/mp4">
+                </video>
+            </div>
+			<div class="video">
+                <video controls>
+                    <source src="v3.mp4" type="video/mp4">
+                </video>
+            </div>
+			<div class="video">
+                <video controls>
+                    <source src="v4.mp4" type="video/mp4">
+                </video>
+            </div>
+			<div class="video">
+                <video controls>
+                    <source src="v5.mp4" type="video/mp4">
+                </video>
+            </div>
+			<div class="video">
+                <video controls>
+                    <source src="v6.mp4" type="video/mp4">
+                </video>
+            </div>
+			<div class="video">
+                <video controls>
+                    <source src="v7.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="v3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="v2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
